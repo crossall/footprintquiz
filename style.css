@@ -1,28 +1,37 @@
-.option-container {
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 2rem;
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  justify-content: center;
 }
-
-.option-card {
-  flex: 1;
-  background-color: #e0f7fa;
-  padding: 1rem;
-  text-align: center;
+.container {
+  background: white;
+  padding: 2rem;
   border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  border: 2px solid transparent;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-.option-card:hover {
-  background-color: #b2ebf2;
-  border-color: #0097a7;
-}
-
-.option-card img {
-  margin-top: 0.5rem;
-  max-width: 100%;
-  height: auto;
+button {
+  padding: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  font-size: 1rem;
+  border: none;
   border-radius: 8px;
+  background-color: #007b5e;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #005f46;
+}
+.option-btn {
+  margin-top: 1rem;
+  background-color: #e0f7fa;
+  color: #333;
+}
+.result {
+  margin-top: 1rem;
+  font-weight: bold;
 }
