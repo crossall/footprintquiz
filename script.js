@@ -93,7 +93,7 @@ function shareResult() {
       <p>총 ${quizzes.length}문제 중 <strong>${score}</strong>개 정답!</p>
       <p>🌿 예상 절감 탄소량: <strong>${saving} kg CO₂</strong></p>
       <div class="source">출처: 기후변화행동연구소 (내 모든 것의 탄소발자국, 2024. 12. 버전)</div>
-      <button onclick="restart()">다시 시작하기</button>\n<button onclick="shareResult()">결과 공유하기</button>
+      <button onclick="restart()">다시 시작하기</button>\n<button onclick="shareResult()">퀴즈 공유하기</button>
     `;
     nextBtn.style.display = "none";
   }
