@@ -6,8 +6,8 @@ function loadQuiz(index) {
   const q = quizzes[index];
   quizBox.innerHTML = `
     <h2>${q.question}</h2>
-    <button class="option-btn" onclick="answer(${q.optionA.isCorrect}, \`${q.explanation}\`)">${q.optionA.label}</button>
-    <button class="option-btn" onclick="answer(${q.optionB.isCorrect}, \`${q.explanation}\`)">${q.optionB.label}</button>
+    <button class="option-btn" onclick="answer(${q.optionA.isCorrect}, '${q.explanation}')">${q.optionA.label}</button>
+    <button class="option-btn" onclick="answer(${q.optionB.isCorrect}, '${q.explanation}')">${q.optionB.label}</button>
     <div class="result" id="result"></div>
   `;
   nextBtn.style.display = "none";
@@ -24,7 +24,7 @@ nextBtn.onclick = () => {
   if (current < quizzes.length) {
     loadQuiz(current);
   } else {
-    quizBox.innerHTML = `<h2>🎉 퀴즈를 모두 풀었습니다!</h2><p>총 ${quizzes.length}문제 중 ${quizzes.length}개를 완료했습니다.</p>`;
+    quizBox.innerHTML = `<h2>🎉 퀴즈를 모두 풀었습니다!</h2><p>총 ${quizzes.length}문제 중 ${quizzes.length}개 완료!</p>`;
     nextBtn.style.display = "none";
   }
 };
