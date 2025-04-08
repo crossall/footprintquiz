@@ -103,11 +103,12 @@ function restart() {
   current = 0;
   score = 0;
   saving = 0;
-  function startQuiz() {
-  document.getElementById('start-screen').style.display = 'none';
-  document.getElementById('quiz-screen').style.display = 'block';
-  document.getElementById("next-sound").play();
-  loadQuiz(current);
+
+  // 화면 전환: 퀴즈 숨기고 시작 화면 보여줌
+  document.getElementById('quiz-screen').style.display = 'none';
+  document.getElementById('start-screen').style.display = 'block';
+}
+
 
 function shareResult() {
   const url = window.location.href;
