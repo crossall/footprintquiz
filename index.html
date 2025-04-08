@@ -1,18 +1,15 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>내 모든 것의 탄소발자국 퀴즈</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>탄소발자국 퀴즈</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h1>탄소발자국 VS 퀴즈</h1>
-    <div id="quiz-box">
-      <!-- 퀴즈 내용이 여기에 동적으로 들어감 -->
-    </div>
+    <div id="quiz-box"></div>
     <button id="next-btn" style="display:none">다음 문제</button>
   </div>
 
@@ -20,106 +17,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-<!-- style.css -->
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-}
-.container {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 600px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-button {
-  padding: 1rem;
-  margin-top: 1rem;
-  width: 100%;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  background-color: #007b5e;
-  color: white;
-  cursor: pointer;
-}
-button:hover {
-  background-color: #005f46;
-}
-.option-btn {
-  margin-top: 1rem;
-  background-color: #e0f7fa;
-  color: #333;
-}
-.result {
-  margin-top: 1rem;
-  font-weight: bold;
-}
-
-<!-- data.js -->
-const quizzes = [
-  {
-    question: "2년 사용 시 탄소발자국이 더 적은 것은?",
-    optionA: {
-      label: "일회용 생리대",
-      isCorrect: false
-    },
-    optionB: {
-      label: "생리컵",
-      isCorrect: true
-    },
-    explanation: "생리컵은 반복 사용이 가능해 장기적으로 탄소발자국이 훨씬 적습니다. 최대 296배 차이가 날 수 있습니다."
-  },
-  {
-    question: "2년 사용 기준, 탄소발자국이 더 적은 컵은?",
-    optionA: {
-      label: "일회용 컵",
-      isCorrect: false
-    },
-    optionB: {
-      label: "스테인레스 텀블러",
-      isCorrect: true
-    },
-    explanation: "스테인레스 텀블러는 초기 탄소발자국은 크지만, 반복 사용으로 일회용 컵보다 친환경적입니다."
-  }
-];
-
-<!-- script.js -->
-let currentQuiz = 0;
-const quizBox = document.getElementById('quiz-box');
-const nextBtn = document.getElementById('next-btn');
-
-function showQuiz(index) {
-  const q = quizzes[index];
-  quizBox.innerHTML = `
-    <h2>${q.question}</h2>
-    <button class="option-btn" onclick="selectAnswer(${q.optionA.isCorrect}, '${q.explanation}')">${q.optionA.label}</button>
-    <button class="option-btn" onclick="selectAnswer(${q.optionB.isCorrect}, '${q.explanation}')">${q.optionB.label}</button>
-    <div class="result" id="result"></div>
-  `;
-  nextBtn.style.display = 'none';
-}
-
-function selectAnswer(isCorrect, explanation) {
-  const resultDiv = document.getElementById('result');
-  resultDiv.textContent = isCorrect ? "정답입니다! 🎉" : "아쉽네요! ❌";
-  resultDiv.innerHTML += `<br><small>${explanation}</small>`;
-  nextBtn.style.display = 'block';
-}
-
-nextBtn.addEventListener('click', () => {
-  currentQuiz++;
-  if (currentQuiz < quizzes.length) {
-    showQuiz(currentQuiz);
-  } else {
-    quizBox.innerHTML = `<h2>퀴즈 완료!</h2><p>총 ${quizzes.length}문제를 풀었습니다.</p>`;
-    nextBtn.style.display = 'none';
-  }
-});
-
-// 첫 퀴즈 표시
-showQuiz(currentQuiz);
