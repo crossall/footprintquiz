@@ -94,3 +94,11 @@ function shareResult() {
     alert("이 브라우저는 공유 기능을 지원하지 않아요. 직접 링크를 복사해 주세요!\n" + url);
   }
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const startButton = document.getElementById("start-btn");
+  if (startButton) {
+    startButton.addEventListener("click", startQuiz);
+  }
+});
