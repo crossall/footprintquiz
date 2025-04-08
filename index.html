@@ -7,11 +7,20 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>탄소발자국 VS 퀴즈</h1>
+  <div class="container" id="start-screen">
+    <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=800&q=80" alt="지구 이미지" class="start-image">
+    <p class="start-description">당신의 선택이 지구에 얼마나 영향을 미치는지 알고 계신가요?<br>탄소발자국 VS 퀴즈로 직접 확인해보세요!</p>
+    <button onclick="startQuiz()">지금 시작하기</button>
+  </div>
+
+  <div class="container" id="quiz-screen" style="display:none;">
     <div id="quiz-box"></div>
     <button id="next-btn" style="display:none">다음 문제</button>
   </div>
+
+  <!-- 효과음 공간 -->
+  <audio id="correct-sound" src="correct.mp3" preload="auto"></audio>
+  <audio id="next-sound" src="next.mp3" preload="auto"></audio>
 
   <script src="data.js"></script>
   <script src="script.js"></script>
